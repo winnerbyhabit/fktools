@@ -7,13 +7,11 @@
 %\usepackage{pdfpages}
 %\usepackage{listings}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-
 %\usepackage{amsmath}
 \usepackage{amssymb}
-
-
 \usepackage[T1]{fontenc}
 \usepackage[ttdefault=true]{AnonymousPro}
+
 \renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
 
 \usepackage{geometry}
@@ -27,22 +25,41 @@
 \newcommand{\nocheck}{\raisebox{-.8\dp\strutbox}{\includegraphics[width=14pt]{Nocheck.pdf}}}
 \newcommand{\dontknow}{\raisebox{-.8\dp\strutbox}{\includegraphics[width=14pt]{Dontknow.pdf}}}
 \newcommand{\notrev}{\raisebox{-.8\dp\strutbox}{\includegraphics[width=14pt]{Notrev.pdf}}}
-
+\newcommand{\sym}[1]{
+\ifcase#1 \item[$\Box$]
+\or \item[\fullcheck]
+\or \item[\semicheck]
+\or \item[\nocheck]
+\or \item[\notrev]
+\else \item[$\Box$]
+\fi}
 
 \usepackage[colorlinks=true]{hyperref}
 
+
+%=============================VARIABLEN====================================
+\newcommand{\fachschaft}{FACHSCHAFT}
+\newcommand{\gremium}{FSV} %Bei der Wahl gewähltes Gremium.
+\newcommand{\wahltermin}{DD. -- DD. MMMM YYYY}
+\newcommand{\sitzungstermin}{DD. MMMM YYYY}
+\newcommand{\vorsitz}{Moritz Krips}
+\newcommand{\anwesende}{\vorsitz\ (Vorsitz), Christoph Heinen, Max Dietrich}
+\newcommand{\berichterstatter}{NN.} %Bevollmächtigte Vertretung der geprüften Fachschaft.
+%==========================================================================
+
+
 \title{Wahlprüfbericht}
-\subtitle{FSV-Wahl FACHSCHAFT, DD. -- DD. MMMM YYYY}
+\subtitle{\gremium-Wahl \fachschaft, \wahltermin}
 \author{Wahlprüfungsausschuss der Fachschaftenkonferenz (WPAF)}
-\date{DD. MMMM YYYY}
+\date{\sitzungstermin}
 
 \begin{document}
 
 \maketitle
 
-Der Wahlprüfungsausschuss der Fachschaftenkonferenz (WPAF) hat am DD. MMMM YYYY die Fachschaftswahl der Fachschaft FACHSCHAFT geprüft. \\
-Anwesend waren: Ann-Christin Heußen, Paula Schreiber, Achim Sieg, Hannah Wissink, Sven Zemanek.\\ 
-Berichterstatter: NN.
+Der Wahlprüfungsausschuss der Fachschaftenkonferenz (WPAF) hat am \sitzungstermin \ die Fachschaftswahl der Fachschaft \fachschaft\ geprüft. \\
+Anwesend waren: \anwesende.\\ 
+Berichterstatter: \berichterstatter
 
 \textbf{Legende:}
 
@@ -58,34 +75,34 @@ Berichterstatter: NN.
 \section{Dokumente und Unterlagen}
 
 Die folgenden Dokumente und Unterlagen wurden zugesandt:
+%=============================================================
+%== Befehl /sym{n} erstellt die in der Legende angegebenen Symbole. ========
+%== n=1: In Ordnung, n=2: Teilweise / kleinere Mängel, n=3: Fehlt / Fehlerhaft ==
+%== n=3: Unbekannt / Unklar, n=4: Nicht zutreffend / Nicht relevant =========
+%=============================================================
 
 \begin{itemize}[label=$\Box$]
-\item Wahlbekanntmachung (Kopie)
-\item Protokolle: (Kopien)
+\sym{0} Wahlbekanntmachung (Kopie)
+\sym{0} Protokolle und Sitzungseinladungen: (Kopien)
+
 \begin{itemize}[label=$\Box$]
-\item Wahl des Wahlleiters und des  Wahlausschusses
-\item Festlegung des Wahltermins
-\item Wahlausschusssitzungen
-\item konstituierende Sitzung nach der Wahl
+\sym{0} Wahl des Wahlleiters und des  Wahlausschusses
+\sym{0} Festlegung des Wahltermins
+\sym{0} Wahlausschusssitzungen
+\sym{0} Protokoll der Wahlvollversammlung
+\sym{0} konstituierende Sitzung nach der Wahl
 \end{itemize}
 
-\item Mitgliederliste von FSV und FSR zum Zeitpunkt der Wahl des Wahlausschusses
-
-\item Liste der Wahlhelferinnen und Wahlhelfer
-
-\item Wahlergebnis (Kopie)
-
-\item Bekanntmachung der Wahlvorschläge (Kopie)
-
-\item Urnenbuch (Original)
-
-\item Stimmzettel (Originale)
-
-\item Wählerverzeichnis (Original)
-
-\item Wahlvorschläge und Kandidaturen (Originale, ALLE, auch abgelehnte)
-
-\item Briefwahlanträge (Originale)
+\sym{0} Anträge zum Wahlverfahren (Originale)
+\sym{0} Mitgliederliste von FSV und FSR zum Zeitpunkt der Wahl des Wahlausschusses
+\sym{0} Liste der Wahlhelferinnen und Wahlhelfer
+\sym{0} Wahlergebnis (Kopie)
+\sym{0} Bekanntmachung der Wahlvorschläge (Kopie)
+\sym{0} Urnenbuch (Original)
+\sym{0} Stimmzettel (Originale)
+\sym{0} Wählerverzeichnis (Original)
+\sym{0} Wahlvorschläge und Kandidaturen (Originale, ALLE, auch abgelehnte)
+\sym{0} Briefwahlanträge (Originale)
 \end{itemize}
 
 % Das Protokoll einer Wahlausschusssitzung mit Zulassung der Wahlvorschläge und Festlegung des Wahlverfahrens im Sonderfall ist nicht vorhanden.
@@ -99,21 +116,19 @@ Die folgenden Dokumente und Unterlagen wurden zugesandt:
 % Wahlvorschläge wurden angeblich nicht eingereicht.
 
 
-\section{Fristen}
-
-Die folgenden Fristen wurden eingehalten:
+\section{Termine und Fristen}
+Die folgenden Termine und Fristen wurden eingehalten:
 
 \begin{itemize}[label=$\Box$]
-\item Festlegung Wahltermin 30 Tage vor Wahl
-\item Wahl Wahlleiter und Wahlausschuss 30 Tage vor Wahl
-\item Konstituierende Wahlausschusssitzung 25 Tage vor Wahl
-\item Festlegung Auslageorte Wählerverzeichnis 19 Tage vor Wahl
-\item Wahlbekanntmachung 18 Tage vor Wahl
-\item Auslage Wählerverzeichnis 15 Tage vor Wahl bis 11 Tage vor Wahl
-\item Kandidaturabgabe 12 Tage vor Wahl
-\item Bekanntgabe der Wahlvorschläge 9 Tage vor der Wahl
-\item Veröffentlichung des Wahlergebnisprotokolls 3 Tage nach der Wahl
-\item konstituierende FSV-Sitzung 14 Tage nach Wahl
+\sym{0} Festlegung Wahltermin 30 Tage vor Wahl
+\sym{0} Wahl Wahlleiter und Wahlausschuss 30 Tage vor Wahl
+\sym{0} Konstituierende Wahlausschusssitzung 25 Tage vor Wahl
+\sym{0} Festlegung Termine, Fristen und Orte 25 Tage vor Wahl
+\sym{0} Übernahme Wählendenverzeichnis 19 Tage vor Wahl
+\sym{0} Wahlbekanntmachung 18 Tage vor Wahl
+\sym{0} Auslage Wählendenverzeichnis an mindestens 3 Werktagen vor Frist
+\sym{0} Frist für Kandidaturen und Anträge 13 Tage vor Wahl bis 10 Tage vor Wahl
+\sym{0} Konstituierende FSV-Sitzung 5 bis 14 Tage nach Wahl, oder im Fall einer Wahl-Vollversammlung sofort
 \end{itemize}
 
 % Die Auslageorte des Wählerverzeichnisses wurden nicht explizit festgelegt, sondern lediglich implizit durch Veröffentlichung der Wahlbekanntmachung.
@@ -134,13 +149,27 @@ Die folgenden Fristen wurden eingehalten:
 
 % Die konstituierende Sitzung des Wahlausschusses fand am DD.MM. statt, es existiert ein Protokoll einer FSR-Sitzung vom DD.MM., auf der der Wahlausschuss gewählt wurde. Das ist seltsam.
 
-\section{Kandidaturen \& Wahlverfahren}
+\section{Wahlausschuss}
 \begin{itemize}[label=$\Box$]
-\item Kandidierende sind wahlberechtigt und wählbar
-\item Unterstützer sind wahlberechtigt
-\item Kandidaturen sind ordnungsgemäß
-\item Wahlverfahren in Sonderfällen wurde ggf. beachtet\dots
-\item \dots und vom Wahlausschuss festgelegt
+	\sym{0} Die Wahl des Wahlausschusses durch FSV oder FSR wurde in der Sitzungseinladung mit einem Verweis auf § 26 Abs. 2 FSWO angekündigt
+	\sym{0} Der Wahlausschuss besteht aus Wahlleitung und mindestens zwei weiteren Mitgliedern
+\end{itemize}
+
+\section{Wahlverfahren}
+\begin{itemize}[label=$\Box$]
+	\sym{0} Das Wahlverfahren steht im Einklang mit der Fachschaftssatzung
+	\sym{0} Anträge zum Wahlverfahren lagen nicht vor
+\end{itemize}
+ODER
+\begin{itemize}[label=$\Box$]	
+	\sym{0} Anträge zum Wahlverfahren wurden ordnungsgemäß behandelt
+\end{itemize}
+
+\section{Kandidaturen}
+\begin{itemize}[label=$\Box$]
+\sym{0} Kandidierende sind wahlberechtigt und wählbar
+\sym{0} Unterstützer sind wahlberechtigt
+\sym{0} Kandidaturen sind ordnungsgemäß
 \end{itemize}
 
 % Bei 13 zugelassenen Wahlbewerbungen mit insgesamt 13 Kandidierenden finden die Regelungen zum Wahlverfahren in Sonderfällen keine Anwendung.
@@ -163,8 +192,8 @@ Die folgenden Fristen wurden eingehalten:
 
 \section{Wahlunterlagen}
 \begin{itemize}[label=$\Box$]
-\item Urnenbuch korrekt geführt
-\item Stimmzettel enthalten alle notwendigen Daten und Ankreuzfelder
+\sym{0} Urnenbuch korrekt geführt
+\sym{0} Stimmzettel enthalten alle notwendigen Daten und Ankreuzfelder
 \end{itemize}
 
 % Das Urnenbuch wurde lediglich mit Bleistift abgeschlossen. Außerdem fehlen die Kennzeichnung als Urnenbuch und die Bezeichnung der Wahl.
@@ -180,13 +209,13 @@ Die folgenden Fristen wurden eingehalten:
 
 \section{Rahmenbedingungen}
 \begin{itemize}[label=$\Box$]
-\item Wahlausschussmitglieder sind bei Wahl nicht FSR- oder FSV-Mitglieder
-\item Kandidierende sind weder Wahlausschussmitglieder noch Wahlhelfende
-\item Wahlbekanntmachung enthält alle vorgeschriebenen Inhalte
-\item Korrekte Daten in Wahlbekanntmachung
-\item Stimmzettel wurden korrekt ausgezählt
-\item Wahlergebnis enthält alle vorgeschriebenen Inhalte
-\item Wahlergebnis wurde korrekt festgestellt (Sitze, Verfahren)
+
+\sym{0} Kandidierende sind weder Wahlausschussmitglieder noch Wahlhelfende
+\sym{0} Wahlbekanntmachung enthält alle vorgeschriebenen Inhalte
+\sym{0} Korrekte Daten in Wahlbekanntmachung
+\sym{0} Stimmzettel wurden korrekt ausgezählt
+\sym{0} Wahlergebnis enthält alle vorgeschriebenen Inhalte
+\sym{0} Wahlergebnis wurde korrekt festgestellt (Sitze, Verfahren)
 \end{itemize}
 
 %In der Wahlbekanntmachung fehlt der Hinweis auf die Möglichkeit eines Antrags auf Briefwahl, sowie die bei der Briefwahl zu beachtenden Fristen.
@@ -237,13 +266,13 @@ Die folgenden Fristen wurden eingehalten:
 
 \section{Briefwahl}
 \begin{itemize}[label=$\Box$]
-\item Briefwahlanträge lagen nicht vor.
+\sym{0} Briefwahlanträge lagen nicht vor.
 \end{itemize}
 
  ODER
  
 \begin{itemize}[label=$\Box$]
-\item Briefwahlanträge wurden ordnungsgemäß behandelt.
+\sym{0} Briefwahlanträge wurden ordnungsgemäß behandelt.
 \end{itemize}
 
 % Der WPAF geht davon aus, dass keine Briefwahlanträge vorlagen.
@@ -304,4 +333,6 @@ Der WPAF empfiehlt der Fachschaftenkonferenz folgenden Beschluss:
 
 % Die Wahl der Fachschaftsvertretung FACHSCHAFT im Zeitraum DD.MM.-DD:MM.YYYY wird für ungültig erklärt. Sie ist gemäß § 16 Abs. 7 FSWO vollständig zu wiederholen.
 
+gez. \vorsitz\\
+Vorsitz des WPAF
 \end{document}
