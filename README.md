@@ -47,6 +47,18 @@ Die Studierendenstatistik ist im Universitäts-Intranet erhältlich:
 Die Liste der Fachschaften der RFWU Bonn mit zugeordneten FAKs im Markdown-Format kann im fstool 
 heruntergeladen werden: [Link](https://gaia.asta.uni-bonn.de/fstool/fachschaften-md.php?fullnames)
 
+### GUI
+Man kann das Skript mittels 
+```
+./gui.py
+```
+aufrufen.
+Dann werden die beiden Exceldateien als input abgefragt.
+Sie werden dann automatisch mitthilfe des xlsx2csv Skirpts umgewandelt: 
+dessen Quellcode findet man hier: https://github.com/dilshod/xlsx2csv/
+
+Es läd außerdem die Fachschaftenliste automatisch runter.
+
 ### Daten vorbereiten
 
 Die Excel-Dateien der Studierendenstatistik müssen in csv-Dateien umgewandelt werden. Dafür die Datei öffnen, 
@@ -58,9 +70,13 @@ als Texttrenner)
 Das Skript `analyze.py` im Ordner `fakupdate` wird mit den beiden csv-Dateien sowie der aktuellen 
 Fachschaftenliste im Markdown-Format als Parameter aufgerufen. 
 
+Alternativ kann man das Skript auch direkt aufrufen:
+
 ```
 ./analyze.py faelle.csv personen.csv fachschaftenliste.md
 ```
+
+
 
 Es erzeugt daraufhin 5 neue Dateien im selben Ordner:
 
