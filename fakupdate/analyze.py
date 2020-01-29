@@ -21,6 +21,9 @@ def main():
 	if(not os.path.isfile(args.fachschaftenliste_md)):
 		print("Datei {} existiert nicht".format(args.fachschaftenliste_md))
 		sys.exit()
+	analyze(args)
+
+def analyze(args):
 
 	faks = set()
 	with open(args.faelle_csv, "r") as a, open(args.personen_csv, "r") as b:
