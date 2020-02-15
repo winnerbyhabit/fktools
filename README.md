@@ -48,6 +48,11 @@ Die Liste der Fachschaften der RFWU Bonn mit zugeordneten FAKs im Markdown-Forma
 heruntergeladen werden: [Link](https://gaia.asta.uni-bonn.de/fstool/fachschaften-md.php?fullnames)
 
 ### GUI
+Um die GUI zu nutzen muss TK-Inter installiert sein:
+```
+sudo apt install python-tk
+```
+
 Man kann das Skript mittels 
 ```
 ./gui.py
